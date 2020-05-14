@@ -27,40 +27,132 @@ $ npm uninstall ibm-quantum-js
 
 <h3> Change Log </h3>
 
-* `0.0.1`
+* `0.1.1`
   * First working module
 
 
 <h3> Usage </h3>
 
-<p> Perform an action based on location: </p>
+<p> Perform a login with API_TOKEN and get a valid auth token: </p>
 
 ```javascript
 
 const quantum = require('ibm-quantum-js');
 
+const token = await quantum.loginWithToken(API_TOKEN);
 
+```
+<p> *Note:* API_TOKEN is created after you validate IBM Q Experience user ID. You can find it under "My Account" in the IBM Q Experience web [site](https://quantum-computing.ibm.com/account).</p>
+
+<p> Get user information: </p>
+
+```javascript
+
+const token = await quantum.loginWithToken(API_TOKEN);
+
+const userInfo = await quantum.getUserInfo(token);
 
 ```
 
-<p> Define a function to return employee information: </p>
+<p> Get IBM Quantum backends(processors): </p>
 
 ```javascript
 
-const quantum = require('ibm-quantum-js');
+const token = await quantum.loginWithToken(API_TOKEN);
 
-const
+const backends = await quantum.getIBMBackends(token);
+
+```
+
+<p> Get IBM Quantum backend queue status: </p>
+
+```javascript
+
+const processor = backends[0].name || 'ibmq_qasm_simulator';
+
+const queueStatus = await quantum.getIBMBackendQueue(processor);
+
+```
+
+<p> Get user experiments on IBM Q: </p>
+
+```javascript
+
+const token = await quantum.loginWithToken(API_TOKEN);
+
+const userExperiments = await quantum.getUserExperiments(token);
+
+```
+
+<p> List user jobs on IBM Q: </p>
+
+```javascript
+
+const token = await quantum.loginWithToken(API_TOKEN);
+
+const userExperiments = await quantum.listUserJobs(token);
+
+```
+
+<p> Cancel an user job in the IBM Q: </p>
+
+```javascript
+
+const token = await quantum.loginWithToken(API_TOKEN);
+
+const userExperiments = await quantum.cancelUserJob(token, jobId);
+
+```
+
+<p> Execute a new user job in the IBM Q: </p>
+
+```javascript
+
+const token = await quantum.loginWithToken(API_TOKEN);
+
+const userExperiments = await quantum.postUserJob(token, jobInfo, jobQObject);
+
+```
+<p> *Note:* `jobQObject` is JSON object from a compiled QASM (Quantum Assembly) code. `jobInfo` indicates which processor to use.</p>
+
+```javascript
+
+const JOB_INFO = {
+  allowObjectStorage: true,
+  backend: {
+    name: 'ibmq_qasm_simulator'
+  }
+};
+
+```
+
+
+<p> Show the results of a COMPLETED user job in the IBM Q: </p>
+
+```javascript
+
+const token = await quantum.loginWithToken(API_TOKEN);
+
+const userExperiments = await quantum.showUserJobResults(token, jobId);
 
 ```
 
 <h3> List of functions available </h3>
 
-* `authenticate(W3ID, password)`
+* `loginWithToken(API_TOKEN)`
+* `getIBMBackends(token)`
+* `getIBMBackendQueue(processor)`
+* `getUserInfo(token)`
+* `getUserExperiments(token)`
+* `cancelUserJob(token, jobId)`
+* `listUserJobs(token)`
+* `postUserJob(token, jobInfo, jobQObject)`
+* `showUserJobResults(token, jobId)`
 
 
 <h3> QObject versus QASM </h3>
 <ul>
-  <li>.</li>
+  <li>Unfortunately there's no available API to compile a QASM into QOBJ, however its JSON schema is published here.</li>
 </ul>
 
 <h3> Contributing </h3>

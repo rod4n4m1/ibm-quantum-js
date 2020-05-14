@@ -37,7 +37,7 @@ const SAMPLE_QOBJ = {
   schema_version: '1.1.0',
   type: 'QASM'
 };
-const JOB_INF0 = {
+const JOB_INFO = {
   allowObjectStorage: true,
   backend: {
     name: 'ibmq_qasm_simulator'
@@ -105,7 +105,7 @@ test('the result is a list of this user experiments', async () => {
 });
 
 test('the result is the job id created', async () => {
-    const data = await quantum.postUserJob(token,JOB_INF0,SAMPLE_QOBJ);
+    const data = await quantum.postUserJob(token,JOB_INFO,SAMPLE_QOBJ);
     //console.log(data);
     jobId = data;
 	return expect(data).not.toBeNull();
