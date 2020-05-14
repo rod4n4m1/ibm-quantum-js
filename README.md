@@ -10,8 +10,9 @@ This module provides a set of functions to help **JavaScript** Developers workin
 ## Requirements (MacOS/Windows)
 
 * Node 10.x / npm v6.x
+* Standard account on IBM Quantum Experience portal
 
-**Note:** Depending on your Windows setup [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) may need to be installed first. Also, for MacOS users, you should have **xcode-selec** or entire Xcode App installed.
+**Note:** Depending on your Windows setup [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) may need to be installed first. Also, for MacOS users, you should have **xcode-select** or entire Xcode App installed.
 
 ### Install
 
@@ -42,30 +43,34 @@ const quantum = require('ibm-quantum-js');
 const token = await quantum.loginWithToken(API_TOKEN);
 
 ```
-**Note:** API_TOKEN is created after you validate IBM Q Experience user ID. You can find it under "My Account" in the IBM Q Experience web [site](https://quantum-computing.ibm.com/account).
+
+**Note:** API_TOKEN is created after you validate your IBM Q Experience user ID. You can find it under "My Account" in the IBM Q Experience web [site](https://quantum-computing.ibm.com/account).
 
 
-Get user information from IBM Q:
+Define a function to return user information from IBM Q:
 
 ```javascript
+const quantum = require('ibm-quantum-js');
 
-const token = await quantum.loginWithToken(API_TOKEN);
-
-const userInfo = await quantum.getUserInfo(token);
+const userInformation = function(token) {
+  return quantum.getUserInfo(token).then(function(result){
+    return result;
+  }).catch(function(error){
+    return error;
+  });
+};
 
 ```
 
-Get IBM Quantum backends(processors):
+Get IBM Q backends (processors):
 
 ```javascript
-
-const token = await quantum.loginWithToken(API_TOKEN);
 
 const backends = await quantum.getIBMBackends(token);
 
 ```
 
-Get IBM Quantum backend queue status from IBM Q:
+Get IBM Q backend queue status:
 
 ```javascript
 
@@ -79,17 +84,13 @@ Get user experiments from IBM Q:
 
 ```javascript
 
-const token = await quantum.loginWithToken(API_TOKEN);
-
 const userExperiments = await quantum.getUserExperiments(token);
 
 ```
 
-List user jobs on IBM Q:
+List user jobs in the IBM Q:
 
 ```javascript
-
-const token = await quantum.loginWithToken(API_TOKEN);
 
 const userExperiments = await quantum.listUserJobs(token);
 
@@ -98,8 +99,6 @@ const userExperiments = await quantum.listUserJobs(token);
 Cancel an user job in the IBM Q:
 
 ```javascript
-
-const token = await quantum.loginWithToken(API_TOKEN);
 
 const userExperiments = await quantum.cancelUserJob(token, jobId);
 
@@ -114,7 +113,7 @@ const token = await quantum.loginWithToken(API_TOKEN);
 const userExperiments = await quantum.postUserJob(token, jobInfo, jobQObject);
 
 ```
-**Note:** `jobQObject` is JSON object from a compiled QASM (Quantum Assembly) code. `jobInfo` indicates which backend/processor to use.</p>
+**Note:** `jobQObject` is JSON object resulted from a compiled QASM (Quantum Assembly) code. `jobInfo` indicates which backend/processor to use.</p>
 
 ```javascript
 
@@ -153,7 +152,7 @@ const userExperiments = await quantum.showUserJobResults(token, jobId);
 
 ### QObject versus QASM
 
-  * Unfortunately there's no available API to compile a QASM into QOBJ, however its JSON schema is published [here](https://github.com/Qiskit/qiskit-terra/blob/master/qiskit/schemas/qobj_schema.json).
+  * Unfortunately there's no available API to compile a QASM into a QOBJ, however its JSON schema is published [here](https://github.com/Qiskit/qiskit-terra/blob/master/qiskit/schemas/qobj_schema.json).
 
 
 ### Contributing
@@ -161,9 +160,9 @@ If you want to contribute to the module and make it better, your help is very we
 
 ### Authors
 Written by Rod Anami <rod.anami@br.ibm.com>, May 2020.
-
-Contributors: Paco Martin <paco@ibm.com>
+Contributor(s): Paco Martin <paco@ibm.com>
 
 ### License
 This project is licensed under the IBM Public License.
+
 Copyright (c) 2020 IBM
