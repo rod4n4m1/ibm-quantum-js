@@ -1,7 +1,7 @@
 {
   "name": "ibm-quantum-js",
   "version": "0.1.3",
-  "description": "A node.js module to interact with the IBM Q Experience API.",
+  "description": "A node.js module to interact with the IBM Quantum API.",
   "main": "Quantum.js",
   "scripts": {
     "test:unit": "jest tests/Unit.test.js"

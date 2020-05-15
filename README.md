@@ -1,11 +1,11 @@
 # IBM Quantum JS
-<img alt="David" src="https://img.shields.io/david/aromerohcr/ibm-quantum-js">
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/aromerohcr/ibm-quantum-js">
+<img alt="David" src="https://img.shields.io/david/rod4n4m1/ibm-quantum-js">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/rod4n4m1/ibm-quantum-js">
 <img alt="npm" src="https://img.shields.io/npm/dm/ibm-quantum-js">
 <img alt="NPM" src="https://img.shields.io/npm/l/ibm-quantum-js">
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/aromerohcr/ibm-quantum-js">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/rod4n4m1/ibm-quantum-js">
 
-This module provides a set of functions to help **JavaScript** Developers working on IBM Q Experience projects to authenticate and access API endpoints using Javascript promises.
+This module provides a set of functions to help **JavaScript** Developers working on IBM Quantum Experience projects to authenticate and access API endpoints using Javascript promises.
 
 ## Requirements (MacOS/Windows)
 
