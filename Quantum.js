@@ -413,7 +413,7 @@ const getResultDownloadUrl = async (token, jobId) => {
               console.log("Error: Get Download URL failed: ", statusCode, body);
           } else {
               result = _.pick(JSON.parse(body), 'url');
-              console.log('result: ', result);
+              //console.log('result: ', result);
               console.log("Info: Get Download URL successful ", response.statusCode);
           }
           resolve(result? result.url : null);
