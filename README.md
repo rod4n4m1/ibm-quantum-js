@@ -28,7 +28,7 @@ $ npm uninstall ibm-quantum-js
 
 ### Change Log
 
-* `0.1.1`
+* `0.1.3`
   * First working module
 
 
