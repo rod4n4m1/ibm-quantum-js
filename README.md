@@ -9,7 +9,8 @@ This module provides a set of functions to help **JavaScript** Developers workin
 
 ## Requirements (MacOS/Windows)
 
-* Node 10.x / npm v6.x
+* Node v10.x
+* npm v6.x
 * Standard account on IBM Quantum Experience portal
 
 **Note:** Depending on your Windows setup [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) may need to be installed first. Also, for MacOS users, you should have **xcode-select** or entire Xcode App installed.
@@ -27,6 +28,9 @@ $ npm uninstall ibm-quantum-js
 ```
 
 ### Change Log
+
+* `0.1.4`
+  * Fixed security vulnerability on lodash dependency
 
 * `0.1.3`
   * First working module
