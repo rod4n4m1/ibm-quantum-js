@@ -9,7 +9,7 @@ This module provides a set of functions to help **JavaScript** Developers workin
 
 ## Requirements (MacOS/Windows)
 
-* Node v10.x
+* Node v12.x
 * npm v6.x
 * Standard account on IBM Quantum Experience portal
 
@@ -29,8 +29,11 @@ $ npm uninstall ibm-quantum-js
 
 ### Change Log
 
+* `0.1.5`
+  * Fixed security vulnerability on `host-git-info`, `underscode`, and `lodash`
+
 * `0.1.4`
-  * Fixed security vulnerability on lodash dependency
+  * Fixed security vulnerability on `lodash` dependency
 
 * `0.1.3`
   * First working module
