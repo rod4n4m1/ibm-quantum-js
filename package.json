@@ -18,7 +18,7 @@
     "api",
     "async"
   ],
-  "author": "Rod Anami (rod.anami@br.ibm.com)",
+  "author": "Rod Anami (rod.anami@kyndryl.com)",
   "contributors": [
     "Paco Martin <paco@ibm.com>"
   ],
@@ -32,6 +32,6 @@
     "underscore": "^1.10.2"
   },
   "devDependencies": {
-    "jest": "^26.0"
+    "jest": "^27.2.4"
   }
 }
