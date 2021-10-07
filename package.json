@@ -1,6 +1,6 @@
 {
   "name": "ibm-quantum-js",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A node.js module to interact with the IBM Quantum API.",
   "main": "Quantum.js",
   "scripts": {

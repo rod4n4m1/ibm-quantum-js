@@ -29,6 +29,9 @@ $ npm uninstall ibm-quantum-js
 
 ### Change Log
 
+* `0.1.7`
+  * Fixed security vulnerabilities
+
 * `0.1.6`
   * Fixed security vulnerability on `ws`
 
@@ -169,10 +172,8 @@ const userExperiments = await quantum.showUserJobResults(token, jobId);
 If you want to contribute to the module and make it better, your help is very welcome. You can do so submitting a **Pull Request**.
 
 ### Authors
-Written by Rod Anami <rod.anami@br.ibm.com>, May 2020.
+Written by Rod Anami <rod.anami@kyndryl.com>, May 2020.
 Contributor(s): Paco Martin <paco@ibm.com>
 
 ### License
 This project is licensed under the IBM Public License.
-
-Copyright (c) 2020 IBM
