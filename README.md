@@ -29,6 +29,9 @@ $ npm uninstall ibm-quantum-js
 
 ### Change Log
 
+* `0.1.6`
+  * Fixed security vulnerability on `ws`
+
 * `0.1.5`
   * Fixed security vulnerability on `host-git-info`, `underscode`, and `lodash`
 
